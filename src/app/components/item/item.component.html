@@ -1,8 +1,11 @@
 <li [ngClass]="{ completed: todo!.completed }">
   <div class="view">
-    <input class="toggle" type="checkbox" [checked]="todo!.completed">
+    <input class="toggle" type="checkbox"
+      [checked]="todo!.completed"
+      (change)="toggle.emit()"
+    >
     <label>{{ todo!.title }}</label>
-    <button class="destroy"></button>
+    <button class="destroy" (click)="destroy.emit()"></button>
   </div>
   <input class="edit" value="Create a TodoMVC template">
 </li>

@@ -55,4 +55,21 @@ describe('ItemComponent', () => {
     expect(liEL.classList.contains('completed')).toBeTrue();
   });
 
+  it('should fire toggle event on request', () => {
+    spyOn(component.toggle, 'emit');
+
+    const toggleDE = fixture.debugElement.query(By.css('.toggle'));
+    toggleDE.triggerEventHandler('change', {});
+
+    expect(component.toggle.emit).toHaveBeenCalled();
+  });
+
+  it('should fire destroy event on request', () => {
+    spyOn(component.destroy, 'emit');
+
+    const destroyDE = fixture.debugElement.query(By.css('.destroy'));
+    destroyDE.triggerEventHandler('click', {});
+
+    expect(component.destroy.emit).toHaveBeenCalled();
+  });
 });
