@@ -1,16 +1,16 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
-describe('workspace-project App', () => {
+describe('TodoMVC App', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display todos title', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('sample-todomvc app is running!');
+    expect(page.getTitleText()).toEqual('todos');
   });
 
   afterEach(async () => {
